@@ -1,20 +1,13 @@
 #!/usr/bin/python3
 
-from calculator_1 import add
-from calculator_1 import sub
-from calculator_1 import mul
-from calculator_1 import div
+import calculator_1
 
 a = 10
 b = 5
-sum = add(a, b)
-print("{} + {} = {}".format(a, b, sum))
-sum = sub(a, b)
-print("{} + {} = {}".format(a, b, sum))
-sum = mul(a, b)
-print("{} + {} = {}".format(a, b, sum))
-sum = div(a, b)
-print("{} + {} = {}".format(a, b, sum))
+print("{} + {} = {}".format(a, b, calculator_1.add(a, b)))
+print("{} + {} = {}".format(a, b, calculator_1.sub(a, b)))
+print("{} + {} = {}".format(a, b, calculator_1.mul(a, b)))
+print("{} + {} = {}".format(a, b, calculator_1.div(a, b)))
 
 if __name__ == "__main__":
     pass
