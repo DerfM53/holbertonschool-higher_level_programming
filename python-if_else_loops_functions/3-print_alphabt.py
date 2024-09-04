@@ -4,5 +4,5 @@ while ascii != 123:
     if ascii == 101 or ascii == 113:
         pass
     else:
-        print(chr(ascii), end=" ")
+        print("{}".format(chr(ascii)), end="")
     ascii += 1
