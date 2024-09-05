@@ -7,4 +7,3 @@ while ascii != 96:
     ascii_up = (int(ascii) - 32)
     print("{}".format(chr(ascii_up)), end="")
     ascii -= 1
-print("guillaume", end="")
