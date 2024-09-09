@@ -6,9 +6,9 @@ def new_in_list(my_list, idx, element):
         new_list.append(my_list[i])
         i += 1
     if idx < 0:
-        return None
+        return new_list
     elif idx > len(new_list):
-        return None
+        return new_list
     else:
         new_list[idx] = element
         return new_list
