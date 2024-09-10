@@ -1,0 +1,1 @@
+New directory for learning python langage data
