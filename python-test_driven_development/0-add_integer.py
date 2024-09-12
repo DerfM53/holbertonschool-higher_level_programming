@@ -20,6 +20,8 @@ def add_integer(a, b=98):
 
     Raises:
     TypeError: If a or b is not an integer or a float.
+    OverflowError: If a or b is a float that's too
+    large to convert to an integer.
 
     Examples:
     >>> add_integer(1, 2)
