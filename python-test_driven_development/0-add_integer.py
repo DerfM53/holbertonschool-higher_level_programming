@@ -20,8 +20,7 @@ def add_integer(a, b=98):
 
     Raises:
     TypeError: If a or b is not an integer or a float.
-    OverflowError: If a or b is a float that's too
-    large to convert to an integer.
+    ValueError: If a or b is NaN
 
     Examples:
     >>> add_integer(1, 2)
@@ -45,4 +44,6 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
+    if a != a or b != b:
+        raise ValueError("cannot convert float NaN to integer")
     return int(a) + int(b)
