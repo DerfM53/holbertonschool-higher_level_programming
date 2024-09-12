@@ -45,7 +45,4 @@ def add_integer(a, b=98):
         raise TypeError("a must be an integer")
     if not isinstance(b, (int, float)):
         raise TypeError("b must be an integer")
-    try:
-        return int(a) + int(b)
-    except OverflowError:
-        raise OverflowError("cannot convert float infinity to integer")
+    return int(a) + int(b)
