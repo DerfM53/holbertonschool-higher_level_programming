@@ -26,3 +26,17 @@ div must be a number
 ... except ZeroDivisionError as e:
 ...     print(e)
 division by zero
+
+# Test case 6: TypeError for matrix not being a list of lists of integers/floats
+>>> try:
+...     matrix_divided("not a matrix", 2)
+... except TypeError as e:
+...     print(e)
+matrix must be a matrix (list of lists) of integers/floats
+
+# Test case 7: TypeError for matrix containing non-number elements
+>>> try:
+...     matrix_divided([[1, 2, 3], [4, "5", 6]], 2)
+... except TypeError as e:
+...     print(e)
+matrix must be a matrix (list of lists) of integers/floats
