@@ -1,0 +1,28 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+# Test case 1: Normal operation
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+# Test case 2: Matrix remains unchanged
+>>> print(matrix)
+[[1, 2, 3], [4, 5, 6]]
+
+# Test case 3: Division by 1
+>>> print(matrix_divided(matrix, 1))
+[[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+# Test case 4: TypeError for non-number div
+>>> try:
+...     matrix_divided(matrix, "not a number")
+... except TypeError as e:
+...     print(e)
+div must be a number
+
+# Test case 5: ZeroDivisionError
+>>> try:
+...     matrix_divided(matrix, 0)
+... except ZeroDivisionError as e:
+...     print(e)
+division by zero
