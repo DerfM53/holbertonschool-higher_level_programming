@@ -1,0 +1,1 @@
+This new directory contains exercices for learning the POO
