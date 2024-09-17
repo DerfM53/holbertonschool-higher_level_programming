@@ -1,0 +1,1 @@
+Suite of exercice of learning class
