@@ -33,8 +33,7 @@ class Rectangle:
         return "\n".join(rectangle)
 
     def __repr__(self):
-        """Return representation of object rectangle"""
-        return f"Rectangle({self.__width}, {self.__height})"
+        return eval(f"'Rectangle({self.__width}, {self.__height})'")
 
     def area(self):
         """return area of rectangle"""
