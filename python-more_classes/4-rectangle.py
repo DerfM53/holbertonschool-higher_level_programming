@@ -33,6 +33,7 @@ class Rectangle:
         return "\n".join(rectangle)
 
     def __repr__(self):
+        """Return representative str of rectangle"""
         return eval(f"'Rectangle({self.__width}, {self.__height})'")
 
     def area(self):
