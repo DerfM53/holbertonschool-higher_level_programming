@@ -1,0 +1,52 @@
+>>> MyList = __import__('1-my_list').MyList
+
+# Test création d'une liste vide
+>>> my_list = MyList()
+>>> print(my_list)
+[]
+
+# Test ajout d'éléments
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+# Test print_sorted
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+# Vérifier que la liste originale n'a pas été modifiée
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+
+# Test avec une liste vide
+>>> empty_list = MyList()
+>>> empty_list.print_sorted()
+[]
+
+# Test avec des nombres négatifs
+>>> neg_list = MyList()
+>>> neg_list.append(-1)
+>>> neg_list.append(-4)
+>>> neg_list.append(-2)
+>>> neg_list.append(-3)
+>>> neg_list.append(-5)
+>>> neg_list.print_sorted()
+[-5, -4, -3, -2, -1]
+
+# Test avec des nombres répétés
+>>> dup_list = MyList()
+>>> dup_list.append(1)
+>>> dup_list.append(1)
+>>> dup_list.append(2)
+>>> dup_list.append(2)
+>>> dup_list.append(1)
+>>> dup_list.print_sorted()
+[1, 1, 1, 2, 2]
+
+# Test que MyList est bien une sous-classe de list
+>>> issubclass(MyList, list)
+True
