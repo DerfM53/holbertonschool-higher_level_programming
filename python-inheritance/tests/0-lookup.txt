@@ -1,0 +1,194 @@
+>>> lookup = __import__('0-lookup').lookup
+>>> class MyClass1(object):
+...     pass
+>>> result = lookup(MyClass1)
+>>> '__class__' in result
+True
+>>> '__delattr__' in result
+True
+>>> '__dict__' in result
+True
+>>> '__dir__' in result
+True
+>>> '__doc__' in result
+True
+>>> '__eq__' in result
+True
+>>> '__format__' in result
+True
+>>> '__ge__' in result
+True
+>>> '__getattribute__' in result
+True
+>>> '__gt__' in result
+True
+>>> '__hash__' in result
+True
+>>> '__init__' in result
+True
+>>> '__le__' in result
+True
+>>> '__lt__' in result
+True
+>>> '__module__' in result
+True
+>>> '__ne__' in result
+True
+>>> '__new__' in result
+True
+>>> '__reduce__' in result
+True
+>>> '__reduce_ex__' in result
+True
+>>> '__repr__' in result
+True
+>>> '__setattr__' in result
+True
+>>> '__sizeof__' in result
+True
+>>> '__str__' in result
+True
+>>> '__subclasshook__' in result
+True
+>>> '__weakref__' in result
+True
+
+>>> result = lookup(int)
+>>> '__abs__' in result
+True
+>>> '__add__' in result
+True
+>>> '__and__' in result
+True
+>>> '__bool__' in result
+True
+>>> '__ceil__' in result
+True
+>>> '__class__' in result
+True
+>>> '__delattr__' in result
+True
+>>> '__dir__' in result
+True
+>>> '__divmod__' in result
+True
+>>> '__doc__' in result
+True
+>>> '__eq__' in result
+True
+>>> '__float__' in result
+True
+>>> '__floor__' in result
+True
+>>> '__floordiv__' in result
+True
+>>> '__format__' in result
+True
+>>> '__ge__' in result
+True
+>>> '__getattribute__' in result
+True
+>>> '__getnewargs__' in result
+True
+>>> '__gt__' in result
+True
+>>> '__hash__' in result
+True
+>>> '__index__' in result
+True
+>>> '__init__' in result
+True
+>>> '__int__' in result
+True
+>>> '__invert__' in result
+True
+>>> '__le__' in result
+True
+>>> '__lshift__' in result
+True
+>>> '__lt__' in result
+True
+>>> '__mod__' in result
+True
+>>> '__mul__' in result
+True
+>>> '__ne__' in result
+True
+>>> '__neg__' in result
+True
+>>> '__new__' in result
+True
+>>> '__or__' in result
+True
+>>> '__pos__' in result
+True
+>>> '__pow__' in result
+True
+>>> '__radd__' in result
+True
+>>> '__rand__' in result
+True
+>>> '__rdivmod__' in result
+True
+>>> '__reduce__' in result
+True
+>>> '__reduce_ex__' in result
+True
+>>> '__repr__' in result
+True
+>>> '__rfloordiv__' in result
+True
+>>> '__rlshift__' in result
+True
+>>> '__rmod__' in result
+True
+>>> '__rmul__' in result
+True
+>>> '__ror__' in result
+True
+>>> '__round__' in result
+True
+>>> '__rpow__' in result
+True
+>>> '__rrshift__' in result
+True
+>>> '__rshift__' in result
+True
+>>> '__rsub__' in result
+True
+>>> '__rtruediv__' in result
+True
+>>> '__rxor__' in result
+True
+>>> '__setattr__' in result
+True
+>>> '__sizeof__' in result
+True
+>>> '__str__' in result
+True
+>>> '__sub__' in result
+True
+>>> '__subclasshook__' in result
+True
+>>> '__truediv__' in result
+True
+>>> '__trunc__' in result
+True
+>>> '__xor__' in result
+True
+>>> 'bit_length' in result
+True
+>>> 'conjugate' in result
+True
+>>> 'denominator' in result
+True
+>>> 'from_bytes' in result
+True
+>>> 'imag' in result
+True
+>>> 'numerator' in result
+True
+>>> 'real' in result
+True
+>>> 'to_bytes' in result
+True
