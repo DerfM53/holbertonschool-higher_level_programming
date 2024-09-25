@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+This module provides a function to
+inherits_from attribute and methods of an object.
+"""
+
 
 def inherits_from(obj, a_class):
     """
