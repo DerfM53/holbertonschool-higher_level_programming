@@ -9,27 +9,27 @@ The module includes:
 - A shape_info function that uses duck typing to print shape information
 """
 
-
-import math
 from abc import ABC, abstractmethod
+import math
 
 
 class Shape(ABC):
-    """Abstract class represently a shape"""
+    """Abstract class representing a shape"""
 
     @abstractmethod
     def area(self):
-        """Method calculate the area of the shape"""
+        """Calculate the area of the shape"""
         pass
 
     @abstractmethod
     def perimeter(self):
-        """Method calculate the perimeter of the shape"""
+        """Calculate the perimeter of the shape"""
         pass
 
 
 class Circle(Shape):
-    """subclasse of shape defind a circle"""
+    """Subclass of shape defining a circle"""
+
     def __init__(self, radius):
         self.radius = radius
 
@@ -43,7 +43,8 @@ class Circle(Shape):
 
 
 class Rectangle(Shape):
-    """subclasse of chape defind a rectangle"""
+    """Subclass of chape defining a rectangle"""
+
     def __init__(self, width, height):
         self.width = width
         self.height = height
@@ -59,24 +60,22 @@ class Rectangle(Shape):
 
 def shape_info(shape):
     """
-    Affiche l'aire et le périmètre d'une forme géométrique.
+    Print the area and perimeter of a geometric shape.
 
-    Cette fonction utilise le typage duck pour appeler les méthodes
-    area() et perimeter() sur l'objet shape passé en argument,
-    sans vérifier son type spécifique.
+    This function uses duck typing to call the area() and perimeter()
+    methods on the shape object passed as an argument,
+    without checking its specific type.
 
     Args:
-        shape: Un objet représentant une forme géométrique.
-        Doit avoir les méthodes area() et perimeter().
+        shape: An object representing a geometric shape.
+               Must have area() and perimeter() methods.
 
     Prints:
-        Affiche l'aire et le périmètre de la forme sur des lignes séparées.
+        Displays the area and perimeter of the shape on separate lines.
 
     Raises:
-        AttributeError: Si l'objet shape n'a pas de méthode
-        area() ou perimeter().
+        AttributeError: If the shape object doesn't have
+        area() or perimeter() methods.
     """
-    area = shape.area()
-    perimeter = shape.perimeter()
-    print("Area: {}".format(area))
-    print("Perimeter: {}".format(perimeter))
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
