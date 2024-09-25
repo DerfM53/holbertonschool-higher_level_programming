@@ -1,4 +1,14 @@
 #!/usr/bin/python3
+"""
+This module implements an abstract Shape class and its concrete subclasses.
+
+It demonstrates the use of abstract base classes and duck typing in Python.
+The module includes:
+- An abstract Shape class
+- Concrete Circle and Rectangle classes
+- A shape_info function that uses duck typing to print shape information
+"""
+
 
 import math
 from abc import ABC, abstractmethod
