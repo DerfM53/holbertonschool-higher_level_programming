@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""This module containt a function"""
+
 
 def read_file(filename=""):
     """
