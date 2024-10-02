@@ -24,12 +24,12 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """
-    A class of BaseGeometry for Rectangle classes
-    who take an attribute width et height
+    A class representing a rectangle,
+    inheriting from BaseGeometry.
     """
     def __init__(self, width, height):
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
+        super().integer_validator("width", width)
+        super().integer_validator("height", height)
         self.__width = width
         self.__height = height
 
