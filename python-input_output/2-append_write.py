@@ -1,4 +1,13 @@
 #!/usr/bin/python
+"""
+This module provides a function for appending text to a file.
+
+It contains a single function, append_write, which allows users to
+add text to the end of an existing file or create a new file if it
+doesn't exist. The function is designed to work with UTF-8 encoded
+text files.
+"""
+
 
 def append_write(filename="", text=""):
     """

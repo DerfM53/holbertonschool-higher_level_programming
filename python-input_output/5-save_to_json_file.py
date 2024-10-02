@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+"""
+This module provides functionality to save Python objects to JSON files.
+
+It contains a function that serializes a Python object to JSON format
+and writes the resulting JSON string to a specified file. This module
+is useful for persisting data structures in a format that is both
+human-readable and easily parsed by other programs.
+"""
+
 
 import json
 

@@ -1,4 +1,13 @@
 #!/usr/bin/python3
+"""
+This module provides functionality to load Python objects from JSON files.
+
+It contains a function that reads a JSON-formatted file and deserializes
+its contents into a Python object. This module is useful for retrieving
+data structures that have been stored in JSON format, allowing easy
+integration of persisted data back into Python programs.
+"""
+
 
 import json
 
