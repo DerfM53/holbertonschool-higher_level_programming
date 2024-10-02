@@ -20,7 +20,8 @@ class CustomObject:
         Args:
             name (str): The name of the object.
             age (int): The age of the object.
-            is_student (bool): Indicates whether the object is a student or not.
+            is_student (bool): Indicates whether the object
+            is a student or not.
         """
         self.name = name
         self.age = age
@@ -59,9 +60,10 @@ class CustomObject:
             filename (str): The name of the file to load the object from.
 
         Returns:
-            CustomObject: The deserialized object, or None if an error occurred.
+            CustomObject: The deserialized object, or None if
+            an error occurred.
         """
-        try: 
+        try:
             with open(filename, "rb") as f:
                 return pickle.load(f)
         except (FileNotFoundError, pickle.UnpicklingError) as e:
