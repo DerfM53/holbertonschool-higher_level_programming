@@ -45,11 +45,13 @@ class CustomObject:
         Returns:
             bool: True if serialization was successful, None otherwise.
         """
+        if not filename:
+            return None
         try:
             with open(filename, "wb") as f:
                 pickle.dump(self, f)
         except Exception as e:
-            return False
+            return None
 
     @classmethod
     def deserialize(cls, filename):
@@ -63,6 +65,8 @@ class CustomObject:
             CustomObject: The deserialized object, or None if
             an error occurred.
         """
+        if not filename:
+            return None
         try:
             with open(filename, "rb") as f:
                 return pickle.load(f)
