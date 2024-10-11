@@ -4,7 +4,20 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-users = {}
+users = {
+    "jane": {
+        "username": "jane",
+        "name": "Jane",
+        "age": 28,
+        "city": "Los Angeles",
+    },
+    "john": {
+        "username": "john",
+        "name": "John",
+        "age": 30,
+        "city": "New York",
+    },
+}
 
 
 @app.route('/')
@@ -20,13 +33,13 @@ def json_response():
 
 @app.route('/status')
 def status():
-    return "ok"
+    return "OK"
 
 
 @app.route('/users/<username>')
 def user_data(username):
     if username not in users:
-        return {"error": "User not found"}
+        return jsonify({"error": "User not found"}), 404
     else:
         return jsonify(users[username])
 
@@ -37,5 +50,17 @@ def add_user():
     if 'username' not in new_user:
         return jsonify({"error": "Username is required"}), 400
     username = new_user['username']
-    users[username] = new_user
-    return jsonify({"message": "User added", "user": new_user}), 201
+    users[username] = {
+        "username": new_user.get('username'),
+        "name": new_user.get('name'),
+        "age": new_user.get('age'),
+        "city": new_user.get('city')
+    }
+    return jsonify({
+        "message": "User added",
+        "user": users[username]
+    }), 201
+
+
+if __name__ == "__main__":
+    app.run()
