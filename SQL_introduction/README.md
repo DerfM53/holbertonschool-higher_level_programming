@@ -1,0 +1,1 @@
+Directory for learniong SQL with MySQL server.
