@@ -1,15 +1,42 @@
 #!/usr/bin/python3
 
 from flask import Flask, jsonify, request
+from flask_httpauth import HTTPBasicAuth
+from werkzeug.security import generate_password_hash, check_password_hash
+from flask_jwt_extended import jwt_required
+
 
 app = Flask(__name__)
+auth = HTTPBasicAuth()
 
-users = {}
+users = {"jane": {"username": "jane", "name": "Jane", "age": 28, "city": "Los Angeles"}, "john": {"username": "john", "name": "John", "age": 30, "city": "New York"}}
+
+password = {
+    "john": generate_password_hash("hello"),
+    "susan": generate_password_hash("bye")
+}
+
+@auth.verify_password
+def verify_password(username, password):
+    if username in users and check_password_hash(users.get(username), password):
+        return username
 
 
 @app.route('/')
+@auth.login_required
 def home():
-    return "Welcome to the Flask API!"
+    return "Hello, {}!".format(auth.current_user())
+
+@app.route('/login', methods=[POST])
+@jwt_required()
+def login():
+    username = request.json.get("username", None)
+    password = request.json.get("password", None)
+    if username != "test" or password != "test":
+        return jsonify({"msg": "Bad username or password"}), 401
+    
+access_token = create_access_token(identity=username)
+    return jsonify(access_token=access_token)
 
 
 @app.route('/data')
