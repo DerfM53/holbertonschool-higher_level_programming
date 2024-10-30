@@ -1,16 +1,14 @@
 #!/usr/bin/python3
 
 """
-This module containt a script to list state from hbtn_0e_0_usa
-who write in 4th arguments.
+This module contains a script to list states from hbtn_0e_0_usa
+who match the name provided as an argument.
 """
 
 import MySQLdb
 from sys import argv
 
 if __name__ == "__main__":
-
-    search_term = argv[4]
 
     conn = MySQLdb.connect(
         host="localhost",
@@ -21,8 +19,14 @@ if __name__ == "__main__":
         charset="utf8"
     )
     cur = conn.cursor()
-    cur.execute("SELECT * FROM states WHERE name LIKE %s ORDER BY id ASC",
-                (search_term + '%',))
+
+    # Vulnérable à l'injection SQL
+    query = (
+        "SELECT * FROM states "
+        "WHERE name LIKE '{}%' "
+        "ORDER BY id ASC"
+    ).format(argv[4])
+    cur.execute(query)
     rows = cur.fetchall()
     for row in rows:
         print(row)
